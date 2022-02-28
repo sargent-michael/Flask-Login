@@ -1,0 +1,12 @@
+<!--Navigation bar-->
+<div class="nav">
+    <a href="/">Home</a>
+    {% if authenticated == True %}
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    {% endif %}
+</div>

@@ -1,0 +1,26 @@
+<!--Layout for all webpages-->
+<!doctype html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="description" content={{description}}>
+      <!-- Imports the stylesheet -->
+      <link rel="stylesheet" type="text/css" href="/static/styles.css">
+  </head>
+  <!--Header for the website-->
+  <div class="header">
+      <h1>This is my website</h1>
+      <p>{{ date }}</p>
+      <p>{% with messages = get_flashed_messages() %}{% endwith %}</p>
+  </div>
+
+  <!--Body for the website-->
+  <body>
+    {% include 'navigation.html' %}
+    <div class="body">
+        {% block content %}{% endblock %}
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>

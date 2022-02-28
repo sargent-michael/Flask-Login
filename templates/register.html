@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="description" content={{description}}>
+      <!-- Imports the stylesheet -->
+      <link rel="stylesheet" type="text/css" href="/static/styles.css">
+  </head>
+  <!--Header for the website-->
+  <div class="header">
+      <h1>This is my website</h1>
+      <p>{{ date }}</p>
+  </div>
+
+  <!--Body for the website-->
+  <body>
+    <div class="body">
+        <div class="login">
+        {% with messages = get_flashed_messages() %}
+            <h2 class="login-header">Register</h2>
+                <form action="" method="POST">
+            <table>
+                <tr>
+                    <td><label for="username">Username: </label></td>
+                    <td><input type="text" name="username"></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password: </label></td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" class="submit" value="Register"></td>
+                    {% for message in messages %}
+                        <td style="color: red;">{{message}}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+        </form>
+        {% endwith %}
+        </div>
+        {% block content %}{% endblock %}
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>

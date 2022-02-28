@@ -1,0 +1,13 @@
+<!--Body for about.html-->
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+        <h3>Places That I Have Been</h3>
+        <!--Prints the items in unordered list-->
+        {% for k, v in unordered.items() %}
+            <p>{{ k }}, {{ v }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}
